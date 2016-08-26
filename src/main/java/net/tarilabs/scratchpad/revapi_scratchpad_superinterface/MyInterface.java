@@ -1,7 +1,7 @@
 package net.tarilabs.scratchpad.revapi_scratchpad_superinterface;
 
 
-public interface MyInterface {
+public interface MyInterface extends SuperInterface {
     void method1();
-    void method2();
+
 }

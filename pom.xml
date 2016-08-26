@@ -4,7 +4,7 @@
 
   <groupId>net.tarilabs.scratchpad</groupId>
   <artifactId>revapi-scratchpad-superinterface</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <packaging>jar</packaging>
 
   <name>revapi-scratchpad-superinterface</name>
@@ -35,7 +35,23 @@
               <version>0.10.0</version>
             </dependency>
           </dependencies>
-          
+                  <configuration>
+          <oldArtifacts>
+            <artifact>${project.groupId}:${project.artifactId}:1.0.0</artifact>
+          </oldArtifacts>
+          <newArtifacts>
+            <artifact>${project.groupId}:${project.artifactId}:${project.version}</artifact>
+          </newArtifacts>
+        </configuration>
+        <executions>
+          <execution>
+            <id>check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>verify</phase>
+          </execution>
+          </executions>
         </plugin>
 </plugins>
 </build>
